@@ -1,0 +1,4 @@
+
+
+class AnalogInput():
+    pass
