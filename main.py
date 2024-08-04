@@ -1,19 +1,6 @@
-
-from selenium import webdriver
-import time
-
-
-from Tests.TestPidHeader import TestPidHeader
+from Tests.TestNavigation import test_all_pid_headers
 
 
 
-def test_pid_header():
-    driver = webdriver.Chrome()
-   # driver.get("http://localhost:8088/data/perspective/client/SCADA_Ventura/SCADA/64")
-   # time.sleep(5)
+test_all_pid_headers()
 
-    testPidHeader = TestPidHeader(driver, "Dos Vientos Booster",64)
-    testPidHeader.test_header()
-
-
-test_pid_header()
