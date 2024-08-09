@@ -24,14 +24,14 @@ def location_details(location_id):
     else:
         return {}
 
-def tag_read(tagPath):
+def tag_to_css_id(tagPath):
 
     encodedPath = urllib.parse.quote(tagPath)
-    x = requests.get('http://{gateway_ip}:8088/system/webdev/{api_project_name}/api/tag-read'.format(gateway_ip=GATEWAY_IP, api_project_name=API_PROJECT_NAME), 
+    x = requests.get('http://{gateway_ip}:8088/system/webdev/{api_project_name}/api/tag-to-css-id'.format(gateway_ip=GATEWAY_IP, api_project_name=API_PROJECT_NAME), 
                      params={'tagPath':encodedPath})
     
     if x.status_code == 200:
-        return x.json()
+        return x.json()['cssId']
     else:
         return {}
     
@@ -39,3 +39,4 @@ def tag_read(tagPath):
 # print(location_details(64))
 # print(all_locations())
 # print(tag_read('[SCADA]SIM City/Distribution/Booster PS/Pressure/Control/DeviceStatus/Output')['value'])
+# print(tag_to_css_id('[SCADA]SIM City/Distribution/Booster PS/Pressure/Control/DeviceStatus/Output')['cssId'])

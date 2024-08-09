@@ -3,6 +3,7 @@ import time
 
 import SCADA.request
 from Pages.PidPage import PidPage
+from SCADA.Symbols import AnalogInput as AnalogInputSymbol
 from config import GATEWAY_IP
 
 
